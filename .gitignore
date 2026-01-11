@@ -1,0 +1,12 @@
+data
+LLaMA-Factory/**
+
+# Re-allow the directory itself
+!LLaMA-Factory/
+
+# Re-allow the specific subdirectory and its contents
+!LLaMA-Factory/llamaboard_config/
+!LLaMA-Factory/llamaboard_config/**
+
+# Re-allow the specific file
+!LLaMA-Factory/compute_bleu_comet_chrf.py
