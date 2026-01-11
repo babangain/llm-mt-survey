@@ -1,0 +1,18 @@
+model_name_or_path: Qwen/Qwen2.5-1.5B-Instruct
+output_dir: outputs/twoshot/similarity/en-de/
+#deepspeed: examples/deepspeed/ds_z3_offload_config.json, #This may throw error for some models, if used during inference
+pure_bf16: true
+do_predict: true
+dataset_dir: ../data/wmt14
+eval_dataset: wmt14_en_de_test_similarity_twoshot
+template: qwen
+cutoff_len: 1024
+overwrite_cache: true
+preprocessing_num_workers: 16
+flash_attn: auto
+overwrite_output_dir: true
+per_device_eval_batch_size: 16
+predict_with_generate: true
+max_new_tokens: 256
+do_sample: false
+infer_backend: huggingface  # choices: [huggingface, vllm, sglang, ktransformers]
